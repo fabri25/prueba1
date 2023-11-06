@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Registrar Libro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
+    <script src="js/sweet-alert.min.js"></script>
+    <link rel="stylesheet" href="css/sweet-alert.css">
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<!--************* ZONA IZQUIERDA (MENUS DE INICIO, REGISTRO DE USUARIOS, LIBROS Y CATALOGO*********************-->
+    <div class="navbar-lateral full-reset">
+        <div class="visible-xs font-movile-menu mobile-menu-button"></div>
+        <div class="full-reset container-menu-movile custom-scroll-containers">
+            <div class="logo full-reset all-tittles">
+                <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
+                sistema bibliotecario
+            </div>
+            <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
+                <figure>
+                    <img src="assets/img/logo.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
+                </figure>
+                <p class="text-center" style="padding-top: 15px;">Sistema Bibliotecario</p>
+            </div>
+            <div class="full-reset nav-lateral-list-menu">
+                <ul class="list-unstyled">
+                    <li><a href="http://localhost:3000/home"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                    <li>
+                        <div class="dropdown-menu-button"><i class="zmdi zmdi-assignment-o zmdi-hc-fw"></i>&nbsp;&nbsp; Libros y catálogo <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                        <ul class="list-unstyled">
+                            <li><a href="http://localhost:3000/book"><i class="zmdi zmdi-book zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo libro</a></li>
+                            <li><a href="http://localhost:3000/catalog"><i class="zmdi zmdi-bookmark-outline zmdi-hc-fw"></i>&nbsp;&nbsp; Catálogo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--************* ZONA SUPERIOR*********************-->
+    <div class="content-page-container full-reset custom-scroll-containers">
+        <nav class="navbar-user-top full-reset">
+            <ul class="list-unstyled full-reset">
+                <li  class="tooltips-general exit-system-button" href="http://localhost:3000/" data-placement="bottom" title="Salir del sistema">
+                    <i class="zmdi zmdi-power"></i>
+                </li>
+                <!--<li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
+                    <i class="zmdi zmdi-search"></i>
+                </li>-->
+                <li class="mobile-menu-button visible-xs" style="float: left !important;">
+                    <i class="zmdi zmdi-menu"></i>
+                </li>
+            </ul>
+        </nav>
+
+<!--************* ZONA CENTRO*********************-->
+        <div class="container">
+            <div class="page-header">
+              <h1 class="all-tittles">Sistema bibliotecario <br><small>Añadir libro</small></h1>
+            </div>
+        </div>
+        <div class="container-fluid"  style="margin: 50px 0;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <img src="assets/img/flat-book.png" alt="pdf" class="img-responsive center-box" style="max-width: 110px;">
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+                    Bienvenido a la sección para agregar nuevos libros a la biblioteca, deberas de llenar todos los campos para poder registrar el libro
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 lead">
+                    <ol class="breadcrumb">
+                        <li class="active">Registrar Libro</li>
+                        <li><a href="http://localhost:3000/catalog">Catalogo de libros</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <form autocomplete="off" action="/book" method="post" enctype="multipart/form-data">
+                <div class="container-flat-form">
+                    <div class="title-flat-form title-flat-blue">Nuevo libro</div>
+                    <div class="row">
+                       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <legend><strong>Información básica</strong></legend><br>
+                            <div class="group-material">
+                                <input type="text" name="titulo" class="tooltips-general material-control" placeholder="Escribe aquí el título o nombre del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el título o nombre del libro">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Título</label>
+                            </div>
+                            <div class="group-material">
+                                <input type="text" name="autor" class="tooltips-general material-control" placeholder="Escribe aquí el autor del libro" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe el nombre del autor del libro">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Autor</label>
+                            </div>
+                            <div class="group-material">
+                                <span>Categoría</span>
+                                <select class="tooltips-general material-control" name="genero" data-toggle="tooltip" data-placement="top" title="Elige la categoría del libro">
+                                    <option value="" disabled="" selected="">Selecciona una categoría o librero</option>
+                                    <option value="Terror">Terror</option>
+                                    <option value="Educativos">Educativos</option>
+                                    <option value="Ficcion">Ficcion</option>
+                                    <option value="Ficcion">Novelas</option>
+                                    <option value="Ficcion">Poesia</option>
+                                    <option value="Ficcion">Crimen</option>
+                                    <option value="Ficcion">Religion</option>
+                                </select>
+                            </div>
+                            <input type="file" name="pdf" accept=".pdf" required="">
+                            <p class="text-center">
+                                <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
+                                <button type="submit" class="btn btn-primary"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
+                            </p>
+                       </div>
+                   </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center all-tittles">ayuda del sistema</h4>
+                </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Inicio de sesión</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
+    <script src="js/sweet-alert.min.js"></script>
+    <link rel="stylesheet" href="css/sweet-alert.css">
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        .btn-transparent {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            outline: none; /* Para remover el borde azul que aparece al hacer clic en algunos navegadores */
+            transition: 0.3s; /* Opcional: para una transición suave en hover */
+        }
+
+        .btn-transparent:hover {
+            opacity: 0.7; /* Opcional: para dar un efecto al pasar el mouse por encima */
+        }
+    </style>
+</head>
+<body class="full-cover-background" style="background-image:url(assets/img/font-login.jpg);">
+    <div class="form-container">
+        <p class="text-center" style="margin-top: 17px;">
+       </p>
+       <br><br><br><br>
+       <h4 class="text-center all-tittles" style="margin-bottom: 30px;">Registro de nuevo usuario</h4>
+       <form autocomplete="off" action="/admin" method="post">
+            <div class="group-material-login">
+                <input type="text"  name="nombres" class="material-login-control" required="" maxlength="70" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,70}" data-toggle="tooltip" data-placement="top" title="Escribe el nombre del administrador" value="{{nombres}}">
+                <span class="highlight-login"></span>
+                <span class="bar"></span>
+                <label>Nombres</label>
+            </div>
+            <div class="group-material-login">
+                <input type="text" name="apellidos" class="material-login-control" required="" maxlength="70" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,70}" data-toggle="tooltip" data-placement="top" title="Escribe los apellidos del administrador" value="{{apellidos}}">
+                <span class="highlight-login"></span>
+                <span class="bar-login"></span>
+                <label>Apellidos</label>
+            </div>
+            <div class="group-material-login">
+                <input type="email" name="email" class="material-login-control"   maxlength="50" data-toggle="tooltip" data-placement="top" title="Escribe el Email del usuario" value="{{email}}">
+                <span class="highlight-login"></span>
+                <span class="bar-login"></span>
+                <label>E-mail</label>
+            </div>
+            <div class="group-material-login">
+              <input type="password" name="password" class="material-login-control"  required="" maxlength="200" data-toggle="tooltip" data-placement="top" title="Escribe una contraseña" value="{{password}}">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-lock"></i> &nbsp; Contraseña</label>
+            </div>
+            <div class="group-material-login">
+              <input type="password" name="confirm_password" class="material-login-control"  required="" maxlength="200" data-toggle="tooltip" data-placement="top" title="Repite la contraseña" value="{{confirm_password}}">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-lock"></i> &nbsp; Repite la contraseña</label>
+            </div>
+            <button class="btn-login" type="submit">Registrar &nbsp; <i class="zmdi zmdi-arrow-right"></i></button>
+        </form>
+    </div>
+</body>
+</html>
